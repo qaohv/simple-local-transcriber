@@ -63,7 +63,7 @@ def ru_transcribe(audio_file_path: str):
 
     model = gigaam.load_model("rnnt", use_flash=False) # TODO: switch to onnx inference
     recognition_result = model.transcribe_longform(str(audio_file_path))
-
+    print("\n\n")
     for utterance in recognition_result:
         transcription = utterance["transcription"]
         start, end = utterance["boundaries"]

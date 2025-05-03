@@ -1,12 +1,12 @@
-# Simple Local Transcriber (slt)
+# Simple Local Transcriber
 
-It's simple CLI tool to transcribe videos from youtube to russian language.
+Simple local transcribe (slt) is a CLI tool to transcribe videos from youtube to Russian language.
 
 ## Prerequisites
 
 Tool requires `python3.11`, you can install it using [pyenv](https://github.com/pyenv/pyenv) for example.
 
-Util requires extra models from huggingface: https://huggingface.co/pyannote/voice-activity-detection and https://huggingface.co/pyannote/segmentation . So you should get access to these models, create huggingface token and export it as environment variable:
+The tool requires additional models from huggingface: https://huggingface.co/pyannote/voice-activity-detection and https://huggingface.co/pyannote/segmentation . So you should get access to these models, create huggingface token and export it as environment variable:
 
 ```
 export HF_TOKEN=<hf-token-here>
@@ -17,7 +17,7 @@ export HF_TOKEN=<hf-token-here>
 To install tool:
 
 1. Clone repository from github: `git clone git@github.com:qaohv/simple-local-transcriber.git`
-2. Install it pip: `cd simple-local-transcriber && pip install -e .`
+2. Install it with pip: `cd simple-local-transcriber && pip install -e .`
 
 
 ## Usage
@@ -42,18 +42,18 @@ Details about each of them you can find below.
 <details>
     <summary>slt ru-video-transcribe "url-to-video" </summary>
     
-    Command to get trainscribtion from youtube video, it contains following steps:
+    Command to transcribe youtube video, it contains following steps:
     
     1. Downloading video from youtube and save to disk.
     2. Extract audio from saved video.
-    3. Transcribe saved audio and print it to sandard output.
+    3. Transcribe saved audio and print it to standard output.
 
     Example:
     ```
     slt ru-video-transcribe https://www.youtube.com/watch?v=xuYMkaNo_gI
     ```
 
-    As result transcribtion in following format will be printed in console:
+    As result, transcription in following format will be printed in console:
 
     [timestamp_start1 - timestamp_finish1]: some text 1
     [timestamp_start2 - timestamp_finish2]: some text 2
@@ -88,14 +88,14 @@ Details about each of them you can find below.
 <details>
     <summary>slt extract-audio "path-to-audio" </summary>
     
-    Command to transcribe audio and print text to standart output. 
+    Command to transcribe audio and print text to standard output. 
 
     Example:
     ```
     slt ru-transcribe downloaded_video.wav
     ```
 
-    As result transcribtion in following format will be printed in console:
+    As result, transcription in following format will be printed in console:
 
     [timestamp_start1 - timestamp_finish1]: some text 1
     [timestamp_start2 - timestamp_finish2]: some text 2

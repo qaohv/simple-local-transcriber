@@ -100,3 +100,13 @@ Details about each of them you can find below.
     [timestamp_start1 - timestamp_finish1]: some text 1
     [timestamp_start2 - timestamp_finish2]: some text 2
 </details>
+
+As you may have noticed the first command is a sequential call to the next three.
+The tool provides audio extraction and transcribing functionality in case the user already has a video/audio file on the system.
+
+## Technical details
+
+For speech-to-text model [GigaAM-RNNT](https://github.com/salute-developers/GigaAM) model are used. 
+Also, as mentioned above, https://huggingface.co/pyannote/voice-activity-detection and https://huggingface.co/pyannote/segmentation models are used for long audio recognition.
+
+All models are running locally, so, if you trust hf/salute-developers models you may transcribe sensitive information.

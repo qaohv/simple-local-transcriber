@@ -61,7 +61,7 @@ def ru_transcribe(audio_file_path: str):
     if not audio_file_path.exists():
         raise FileNotFoundError(f"Can't find file {audio_file_path}")
 
-    model = gigaam.load_model("rnnt", use_flash=False) # TODO: switch to onnx inference
+    model = gigaam.load_model("v3_e2e_rnnt", fp16_encoder=True, use_flash=False, device=None) # TODO: switch to onnx inference
     recognition_result = model.transcribe_longform(str(audio_file_path))
     print("\n\n")
     for utterance in recognition_result:

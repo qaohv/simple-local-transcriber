@@ -6,11 +6,14 @@ Simple local transcribe (slt) is a CLI tool to transcribe videos from youtube to
 
 Tool requires `python3.11`, you can install it using [pyenv](https://github.com/pyenv/pyenv) for example.
 
-The tool requires additional models from huggingface: https://huggingface.co/pyannote/voice-activity-detection and https://huggingface.co/pyannote/segmentation . So you should get access to these models, create huggingface token and export it as environment variable:
+The tool requires additional models from huggingface: [https://huggingface.co/pyannote/segmentation-3.0](https://huggingface.co/pyannote/segmentation-3.0) . So you should get access to these models, create huggingface token and export it as environment variable:
 
 ```
 export HF_TOKEN=<hf-token-here>
 ```
+## Background
+
+Download [pyannote/segmentation-3.0 model](https://huggingface.co/pyannote/segmentation-3.0/resolve/main/pytorch_model.bin) by hands and put it to `$HOME/.cache/huggingface/hub/models--pyannote--segmentation-3.0/snapshots/e66f3d3b9eb0873085418a7b813d3b369bf160bb/`
 
 ## Installation
 
@@ -86,7 +89,7 @@ Details about each of them you can find below.
 </details>
 
 <details>
-    <summary>slt extract-audio "path-to-audio" </summary>
+    <summary>slt ru-transcribe "path-to-audio" </summary>
     
     Command to transcribe audio and print text to standard output. 
 
@@ -104,9 +107,18 @@ Details about each of them you can find below.
 As you may have noticed the first command is a sequential call to the next three.
 The tool provides audio extraction and transcribing functionality in case the user already has a video/audio file on the system.
 
+**Usefull tip:**
+ 
+ You can save transcribtion of audio to text file with printint to stdout using `tee` command, for example:
+
+ ```
+ slt <audio-file> | tee <text-file>
+ ```
+
 ## Technical details
 
-For speech-to-text model [GigaAM-RNNT](https://github.com/salute-developers/GigaAM) model are used. 
-Also, as mentioned above, https://huggingface.co/pyannote/voice-activity-detection and https://huggingface.co/pyannote/segmentation models are used for long audio recognition.
+For speech-to-text [GigaAM-E2E-RNNT](https://github.com/salute-developers/GigaAM) model are used.
+You can change model via env variable SLT_STT_MODEL, possible options: `v3_e2e_rnnt`, `v3_e2e_ctc`, `v3_rnnt`, `v3_ctc`.
+Also, as mentioned above, [https://huggingface.co/pyannote/segmentation-3.0](https://huggingface.co/pyannote/segmentation-3.0) model is used for long audio recognition.
 
 All models are running locally, so, if you trust hf/salute-developers models you may transcribe sensitive information.

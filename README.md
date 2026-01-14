@@ -89,7 +89,7 @@ Details about each of them you can find below.
 </details>
 
 <details>
-    <summary>slt extract-audio "path-to-audio" </summary>
+    <summary>slt ru-transcribe "path-to-audio" </summary>
     
     Command to transcribe audio and print text to standard output. 
 
@@ -107,7 +107,7 @@ Details about each of them you can find below.
 As you may have noticed the first command is a sequential call to the next three.
 The tool provides audio extraction and transcribing functionality in case the user already has a video/audio file on the system.
 
-*Usefull tip:*
+**Usefull tip:**
  
  You can save transcribtion of audio to text file with printint to stdout using `tee` command, for example:
 

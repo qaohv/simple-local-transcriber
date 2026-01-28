@@ -19,11 +19,14 @@ classifiers = [
 
 dynamic = ["dependencies"]
 
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
+
 [project.urls]
 Homepage = "https://github.com/qaohv/slt"
 
 [project.scripts]
-slt = "src.cli:cli"
+slt = "cli:cli"
 
-[tool.setuptools.dynamic]
-dependencies = { file = ["requirements.txt"] }
+[tool.setuptools.packages.find]
+where = ["src"]

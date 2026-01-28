@@ -1,6 +1,6 @@
 # Simple Local Transcriber
 
-Simple local transcribe (slt) is a CLI tool to transcribe videos from youtube to Russian language.
+Simple local transcribe (slt) is a CLI tool to transcribe videos / audios to Russian language.
 
 ## Prerequisites
 

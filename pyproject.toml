@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "simple-local-transcriber"
+version = "1.0.0"
+description = "A simple local transcriber tool"
+readme = "README.md"
+requires-python = "==3.11.*"
+authors = [
+  { name = "Denis Ryabokon", email = "d.v.ryabokon@gmail.com" },
+]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+dynamic = ["dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
+
+[project.urls]
+Homepage = "https://github.com/qaohv/slt"
+
+[project.scripts]
+slt = "transcriber.cli:cli"
+
+[tool.setuptools.packages.find]
+where = ["src"]

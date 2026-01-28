@@ -1,6 +1,6 @@
 yt_dlp==2025.4.30
 ffmpeg-python==0.2.0
-gigaam @ "git+https://git@github.com/salute-developers/GigaAM.git@8e78880"
+gigaam @ "git+https://github.com/salute-developers/GigaAM.git@8e78880"
 validators==0.35.0
 click==8.3.1
 huggingface-hub==1.2.3

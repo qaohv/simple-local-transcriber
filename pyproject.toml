@@ -26,7 +26,7 @@ dependencies = { file = ["requirements.txt"] }
 Homepage = "https://github.com/qaohv/slt"
 
 [project.scripts]
-slt = "cli"
+slt = "transcriber.cli:cli"
 
 [tool.setuptools.packages.find]
 where = ["src"]
